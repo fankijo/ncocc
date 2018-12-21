@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Copyright fankijo
+#Runs Nextclouds occ commands without the need of alwasy
+#typing the long "sudo -u www-data... part"
+
+#Enter the root folder of your nextcloud instance here
+WWWROOT=/var/www/wwwroot
+
+
+if [ -n "$1" ];
+then
+        sudo -u www-data php $WWWROOT/occ $1
+        exit
+else
+        echo Enter Command for Nextcloud occ:
+        read OCCCOMMAND
+        sudo -u www-data php $WWWROOT/occ $OCCCOMMAND
+fi
