@@ -10,7 +10,7 @@ WWWROOT=/var/www/wwwroot
 
 if [ -n "$1" ];
 then
-        sudo -u www-data php $WWWROOT/occ $1
+        sudo -u www-data php $WWWROOT/occ $1 $2
         exit
 else
         echo Enter Command for Nextcloud occ:
